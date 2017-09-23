@@ -1,204 +1,223 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
-    <head>
-		<meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <title>MeiMei</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<link rel="stylesheet" type="text/css" href="${contextPath}/css/windy.css" />
-		<link rel="stylesheet" type="text/css" href="${contextPath}/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="${contextPath}/css/style2.css" />
-		<script type="text/javascript" src="${contextPath}/js/modernizr.custom.79639.js"></script>
-    </head>
-    <body>
-    	<!-- <audio autoplay="autoplay" loop="loop" controls="controls" style="width:100%"> -->
-    	<audio autoplay="autoplay" loop="loop" style="width:100%">
-    		<source src="${contextPath}/music/until_you.mp3" type="audio/mpeg" />
-    		<source src="${contextPath}/music/until_you.mp3" type="audio/ogg">
-    		Until You
-    	</audio>
-        <div class="container">
-			
-			<header class="">
-				<h2><strong>世界那么大，我们一起去旅行。</strong></h2>	
-			</header>
-			<section class="main">
-				<div class="windy-demo windy-demo-2">
-					<ul id="wi-el" class="wi-container">
-					<li><img src="${contextPath}/images/29.JPG" alt="image6"/><h4>Fairness</h4></li>
-						<li><img src="${contextPath}/images/1.JPG" alt="image1"/><h4>Attractive</h4></li>
-						<li><img src="${contextPath}/images/2.JPG" alt="image2"/><h4>Lovely</h4></li>
-						<li><img src="${contextPath}/images/3.JPG" alt="image3"/><h4>Pretty</h4></li>
-						<li><img src="${contextPath}/images/4.JPG" alt="image4"/><h4>Charming</h4></li>
-						<li><img src="${contextPath}/images/5.JPG" alt="image5"/><h4>Cute</h4></li>
-						<li><img src="${contextPath}/images/6.JPG" alt="image6"/><h4>Fairness</h4></li>
-						<li><img src="${contextPath}/images/7.JPG" alt="image7"/><h4>Pulchritude</h4></li>
-						<li><img src="${contextPath}/images/8.JPG" alt="image8"/><h4>Gorgeous</h4></li>
-						<li><img src="${contextPath}/images/9.JPG" alt="image9"/><h4>Sightly</h4></li>
-						<li><img src="${contextPath}/images/10.JPG" alt="image10"/><h4>Stunning</h4></li>
-						<li><img src="${contextPath}/images/11.JPG" alt="image11"/><h4>Alluring</h4></li>
-						<li><img src="${contextPath}/images/12.JPG" alt="image12"/><h4>Enchanting</h4></li>
-						<li><img src="${contextPath}/images/13.JPG" alt="image13"/><h4>Saucy</h4></li>
-						<li><img src="${contextPath}/images/14.JPG" alt="image14"/><h4>Sightly</h4></li>
-						<li><img src="${contextPath}/images/15.JPG" alt="image15"/><h4>Attractive</h4></li>
-						<li><img src="${contextPath}/images/16.JPG" alt="image16"/><h4>Alluring</h4></li>
-						<li><img src="${contextPath}/images/17.JPG" alt="image17"/><h4>Gorgeous</h4></li>
-						<li><img src="${contextPath}/images/18.JPG" alt="image18"/><h4>Gorgeous</h4></li>
-						<li><img src="${contextPath}/images/19.JPG" alt="image19"/><h4>Sightly</h4></li>
-						<li><img src="${contextPath}/images/20.JPG" alt="image20"/><h4>Stunning</h4></li>
-						<li><img src="${contextPath}/images/21.JPG" alt="image21"/><h4>Alluring</h4></li>
-						<li><img src="${contextPath}/images/22.JPG" alt="image22"/><h4>Enchanting</h4></li>
-						<li><img src="${contextPath}/images/23.JPG" alt="image23"/><h4>Saucy</h4></li>
-						<li><img src="${contextPath}/images/24.JPG" alt="image24"/><h4>Sightly</h4></li>
-						<li><img src="${contextPath}/images/25.JPG" alt="image25"/><h4>Attractive</h4></li>
-						<li><img src="${contextPath}/images/26.JPG" alt="image26"/><h4>Alluring</h4></li>
-						<li><img src="${contextPath}/images/27.JPG" alt="image27"/><h4>Gorgeous</h4></li>
-						<li><img src="${contextPath}/images/28.JPG" alt="image28"/><h4>Gorgeous</h4></li>
-					</ul>
-					<nav>
-						<span id="nav-prev">prev</span>
-						<span id="nav-next">next</span>
-					</nav>
+<head>
+<title>Resource Request Tracking</title>
+
+<meta charset="UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<!--不支持老版本IE-->
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<!--device-width自适应移动端宽度，initial-scale=1不进行缩放-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="<%=path%>/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<%=path%>/css/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="<%=path%>/css/font-awesome.min.css">
+<script type="text/javascript" src="<%=path%>/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="<%=path%>/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<%=path%>/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<%=path%>/js/dataTables.bootstrap.min.js"></script>
+<style>
+.container{position:relative;width:100%;min-height:100%;}
+.body{padding-bottom:50px;}
+.footer{height:10px;position:fixed;bottom:0px;left:0px;width:100%;z-index:999}
+</style>
+</head>
+
+<body>
+	<div class="container">
+		<!-----------------------------------------导航条设计开始--------------------------------->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<img alt="" src="<%=path%>/images/dxc_logo_hz_wht_rgb_300.png" style="height:42px;padding-top:7px">
+				<!-- <p class="navbar-brand">DXC Technology</p> -->
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" >
+				<form class="navbar-form navbar-left pull-right" role="search" >
+					<div class="form-group">
+						<input type="text" id="searchKey" class="form-control" placeholder="Search In Table" onkeypress="javascript:return gosearch();">
+					</div>
+					<button type="button" id="searchButton" class="btn btn-default">Search</button>
+				</form>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid --> </nav>
+
+		<!------------------------------------------导航条结束-------------------------------->
+		<!------------------------------------------page-header开始-------------------------------->
+		<!-- <div class="page-header">
+			<h1>
+				Example page header <small>Subtext for header</small>
+			</h1>
+		</div> -->
+		<!------------------------------------------page-header结束-------------------------------->
+		<div class="body">
+		<div class="panel panel-default" style="padding:5px">
+			<!-- Default panel contents -->
+			<div class="panel-heading">Resource Request Tracking</div>
+			<!-- Table -->
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+			        <tr>
+			        	<th width="5%">Request Date</th>
+						<th width="5%">Account</th>
+						<th width="15%">Project Name</th>
+						<th width="5%">Resource Level</th>
+						<th width="5%">Primary Location</th>
+						<th width="20%">Job Title</th>
+						<th>Job Description</th>
+						<th width="3%">View</th>
+					</tr>
+			    </thead>
+			    <tbody>
+			    </tbody>
+			</table>
+		</div>
+		</div>
+		<div class="footer">
+			<footer>
+				<div id="copyright">
+					<p>2017 © DXC Technology All Rights Reserved.</p>
 				</div>
-			</section>
-			
-        </div>
-        <script type="text/javascript" src="${contextPath}/js/jquery-3.1.1.min.js"></script>
-        <script type="text/javascript" src="${contextPath}/js/modernizr.custom.79639.js"></script>
-        <script type="text/javascript" src="${contextPath}/js/jquery.windy.js"></script>
-        <script type="text/javascript">	
-			$(function() {
-
-				var $el = $( '#wi-el' ),
-					windy = $el.windy( {
-						// rotation and translation boundaries for the items transitions
-						boundaries : {
-							rotateX : { min : 40 , max : 90 },
-							rotateY : { min : -15 , max : 45 },
-							rotateZ : { min : -10 , max : 10 },
-							translateX : { min : -400 , max : 400 },
-							translateY : { min : -400 , max : 400 },
-							translateZ : { min : 350 , max : 550 }
-						}
-					} ),
-					allownavnext = false,
-					allownavprev = false;
-
-				$( '#nav-prev' ).on( 'mousedown', function( event ) {
-
-					allownavprev = true;
-					navprev();
-					if (windy.current == 0) {
-						$("h2").html("<strong>"+"世界那么大，我们一起去旅行。"+"</strong>");
-					} else if (windy.current == 1) {
-						$("h2").html("<strong>"+"我想宠着你"+"</strong>");
-					} else if (windy.current == 2) {
-						$("h2").html("<strong>"+"我想惯着你"+"</strong>");
-					} else if (windy.current == 3) {
-						$("h2").html("<strong>"+"我想和你一起做饭"+"</strong>");
-					} else if (windy.current == 4) {
-						$("h2").html("<strong>"+"我想和你一起躺沙发上看电视"+"</strong>");
-					} else if (windy.current == 5) {
-						$("h2").html("<strong>"+"我想和你一起去远方旅行"+"</strong>");
-					} else if (windy.current == 6) {
-						$("h2").html("<strong>"+"我想和你一起做很很多的事"+"</strong>");
-					} else if (windy.current == 10) {
-						$("h2").html("<strong>"+"我希望我的生命中有你"+"</strong>");
-					} else  if (windy.current == 11) {
-						$("h2").html("<strong>"+"共享快乐悲伤"+"</strong>");
-					} else if (windy.current == 17) {
-						$("h2").html("<strong>"+"我希望我的生命中有你"+"</strong>");
-					} else  if (windy.current == 18) {
-						$("h2").html("<strong>"+"共享快乐悲伤"+"</strong>");
-					} else if (windy.current == 20) {
-						$("h2").html("<strong>"+"我想和你一起虚度时光"+"</strong>");
-					} else if (windy.current == windy.itemsCount-12) {
-						$("h2").html("<strong>"+"我希望和你一起贯彻未来"+"</strong>");
-					} else if (windy.current == windy.itemsCount-11) {
-						$("h2").html("<strong>"+"数遍生命的公路牌"+"</strong>");
-					} else if (windy.current == windy.itemsCount-2) {
-						$("h2").html("<strong>"+"和你一起，相拥而坐都觉得自己是最幸福的人"+"</strong>");
-					} else if (windy.current == windy.itemsCount-1) {
-						$("h2").html("<strong>"+"前面的路还很长，我们牵手而行。"+"</strong>");
-					} else {
-						$("h2").html("<strong>"+"没见面都这么喜欢的人，怎么甘愿之做朋友。"+"</strong>");
-					}
-				
-				} ).on( 'mouseup mouseleave', function( event ) {
-					allownavprev = false;
-				
-				} );
-
-				$( '#nav-next' ).on( 'mousedown', function( event ) {
-
-					allownavnext = true;
-					navnext();
-					if (windy.current == 0) {
-						$("h2").html("<strong>"+"世界那么大，我们一起去旅行。"+"</strong>");
-					} else if (windy.current == 1) {
-						$("h2").html("<strong>"+"我想宠着你"+"</strong>");
-					} else if (windy.current == 2) {
-						$("h2").html("<strong>"+"我想惯着你"+"</strong>");
-					} else if (windy.current == 3) {
-						$("h2").html("<strong>"+"我想和你一起做饭"+"</strong>");
-					} else if (windy.current == 4) {
-						$("h2").html("<strong>"+"我想和你一起躺沙发上看电视"+"</strong>");
-					} else if (windy.current == 5) {
-						$("h2").html("<strong>"+"我想和你一起去远方旅行"+"</strong>");
-					} else if (windy.current == 6) {
-						$("h2").html("<strong>"+"我想和你一起做很很多的事"+"</strong>");
-					} else if (windy.current == 10) {
-						$("h2").html("<strong>"+"我希望我的生命中有你"+"</strong>");
-					} else  if (windy.current == 11) {
-						$("h2").html("<strong>"+"共享快乐悲伤"+"</strong>");
-					} else if (windy.current == 17) {
-						$("h2").html("<strong>"+"我希望我的生命中有你"+"</strong>");
-					} else  if (windy.current == 18) {
-						$("h2").html("<strong>"+"共享快乐悲伤"+"</strong>");
-					} else if (windy.current == 20) {
-						$("h2").html("<strong>"+"我想和你一起虚度时光"+"</strong>");
-					} else if (windy.current == windy.itemsCount-12) {
-						$("h2").html("<strong>"+"我希望和你一起贯彻未来"+"</strong>");
-					} else if (windy.current == windy.itemsCount-11) {
-						$("h2").html("<strong>"+"数遍生命的公路牌"+"</strong>");
-					} else if (windy.current == windy.itemsCount-2) {
-						$("h2").html("<strong>"+"和你一起，相拥而坐都觉得自己是最幸福的人"+"</strong>");
-					} else if (windy.current == windy.itemsCount-1) {
-						$("h2").html("<strong>"+"前面的路还很长，我们牵手而行。"+"</strong>");
-					} else {
-						$("h2").html("<strong>"+"没见面都这么喜欢的人，怎么甘愿之做朋友。"+"</strong>");
-					}
-				} ).on( 'mouseup mouseleave', function( event ) {
-					
-					allownavnext = false;
-				
-				} );
-
-				function navnext() {
-					if( allownavnext ) {
-						windy.next();
-						setTimeout( function() {	
-							navnext();
-						}, 150 );
-					}
-				}
-
-				function navprev() {
-					if( allownavprev ) {
-						windy.prev();
-						setTimeout( function() {	
-							navprev();
-						}, 150 );
-					}
-				}
-
-			});
-			
-			$(function(){
-			   $("audio")[0].play(); 
-			})
-			
-		</script>
-    </body>
+			</footer>
+		</div>
+		<!--页脚结束-->
+	</div>
+</body>
+<div id="modalContent">
+	<jsp:include page="viewModal.jsp"></jsp:include>
+</div>
+<script type="text/javascript">
+	var table ;
+	var serverData;
+	jQuery(document).ready(function() {
+		table =  jQuery('table').DataTable({
+			"bLengthChange" : false,
+			"bFilter" : false,
+			"bSort" : false, 
+			"pageLength" : 10,
+			"bProcessing": true,
+			"serverSide": true,
+	        "ajax" : {
+	            "dataType" : 'json',
+	            "type" : "post",
+	            "cache" : false,
+	            "url" : "${contextPath}/index/list",
+	            "data" : function ( d ) {
+            		return $.extend({}, d, serverData);
+            	}
+	        },
+	        "columns": [	 
+		        	{data: "requestDate",
+	                	render: function (data, type, full, meta){
+	    					return "<span class=\"active\" style = \"display:block;\" >"+ new Date(data).Format("yyyy-MM-dd") + '</span>';
+	    				}
+	                },
+	                {data: "account",
+	                	render: function (data, type, full, meta){
+	    					return "<span class=\"active\" style = \"display:block;\" >"+ data+ '</span>';
+	    				}
+	                },
+	    			{data: "projectName",
+	    				render: function (data, type, full, meta){
+	    					return "<span class=\"success\" style = \"display:block;\" >"+ data+ '</span>';
+	    				}
+	    			},
+	    			{data: "resourceLevel",
+	    				render: function (data, type, full, meta){
+	    					return "<span class=\"warning\" style = \"display:block;\" >"+ data+ '</span>';
+	    				}
+	    			},
+	    			{data: "primaryLocation",
+	    				render: function (data, type, full, meta){
+	    					return "<span class=\"danger\" style = \"display:block;\" >"+ data+ '</span>';
+	    				}
+	    			},
+	    			{data: "jobTitle",
+	    				render: function (data, type, full, meta){
+	    					return "<span class=\"danger\" style = \"display:block;\" >"+ data+ '</span>';
+	    				}
+	    			},
+	    			{data: "jobDescription",
+	    				render: function (data, type, full, meta){
+	    					return "<p class=\"danger\" style = \"display:block;\" >"+ data+ '</p>';
+	    				}
+	    			},
+	    			{data: null,
+	    				render: function (data, type, full, meta){
+	    					return "<button type=\"button\" class = \"btn btn-default btn-block\" onclick=\"viewRequest("+ full.id +")\"  title=\"View this record\"><i class=\"fa fa-eye\"></i></button>";
+	    				}
+	    			}
+	    	],
+			"fnDrawCallback" : function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+				//add Number column
+				/*this.api().column(0).nodes().each(function(cell, i) {
+					cell.innerHTML = i + 1;
+				});*/
+			}
+		});
+	});
+</script>
+<script type="text/javascript">
+	function gosearch(){
+	    if(window.event.keyCode == 13){
+	    	jQuery("#searchButton" ).click();
+	        return false;    
+	    }
+	}
+	
+	jQuery("#searchButton" ).click(function() {
+		var searchKey = jQuery("#searchKey").val();
+		serverData = {"searchKey":jQuery.trim(searchKey)};
+		table.draw(true);
+	});
+	
+	function viewRequest(id){
+		 jQuery.ajax({
+		        type: "post",
+		        dataType: "html",
+		        url: "${contextPath}/index/view?id=" + id,
+		        success: function(data) {
+		            jQuery("#modalContent").html(data);
+		            jQuery("#viewModal").modal("show");
+		        },
+		        error: function() {
+		            alert("Server connection timed out, please try to sign in again.");
+		        }
+		    });
+	}
+</script>
+<script type="text/javascript">
+	Date.prototype.Format = function (fmt) {
+	    var o = {
+	        "M+": this.getMonth() + 1, //æä»½ 
+	        "d+": this.getDate(), //æ¥ 
+	        "h+": this.getHours(), //å°æ¶ 
+	        "m+": this.getMinutes(), //å 
+	        "s+": this.getSeconds(), //ç§ 
+	        "q+": Math.floor((this.getMonth() + 3) / 3), //å­£åº¦ 
+	        "S": this.getMilliseconds() //æ¯«ç§ 
+	    };
+	    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+	    for (var k in o)
+	    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+	    return fmt;
+	}
+</script>
 </html>
